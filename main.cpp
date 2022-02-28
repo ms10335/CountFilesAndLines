@@ -21,7 +21,7 @@ int main() {
     namespace fs = std::filesystem;
     Timer timer;
     DirStatistic dst;
-    fs::path p1; //("/home/marcins/Programowanie/CodersSchool/ZadaniaRekrutacja/Test");
+    fs::path p1;
     std::string path;
     while (true) {
         try {
