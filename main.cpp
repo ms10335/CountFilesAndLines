@@ -21,8 +21,20 @@ int main() {
     namespace fs = std::filesystem;
     Timer timer;
     DirStatistic dst;
-    const fs::path p1("/home/marcins/Programowanie/CodersSchool/ZadaniaRekrutacja/Test");
-    dst.fileSystem(p1);
-    dst.printStatistic();
+    fs::path p1; //("/home/marcins/Programowanie/CodersSchool/ZadaniaRekrutacja/Test");
+    std::string path;
+    while (true) {
+        try {
+            std::cout << "Please give source path:\n";
+            std::cin >> path; 
+            p1 = path;
+            dst.fileSystem(p1);
+            dst.printStatistic();
+            break;
+        } catch (fs::filesystem_error const& ex) {
+            std::cout << "what happened:\n" << ex.what() << '\n';
+            continue;
+        }
+    }
     return 0;
 }
